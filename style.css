@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(16, 16, 27);
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 0.5rem;
+}
+
+.card {
+    background-color: rgb(34, 36, 54);
+    padding: 0.7rem;
+    width: 45%;
+    max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.slide {
+    animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-right {
+    0% {
+        -webkit-transform: translateX(1000px);
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-left {
+    0% {
+        -webkit-transform: translateX(-1000px);
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+input[type="text"] {
+    width: 75%;
+    margin: 2rem auto;
+    font-size: 1.2rem;
+    padding: 0.75rem;
+    color: rgb(255, 255, 255);
+    outline: 0;
+    border: 2px solid rgb(133, 130, 153);
+    border-radius: 0.3rem;
+    background-color: rgb(61, 65, 83);
+}
+
+.new-input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.generate-pin-button {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(73, 91, 195);
+    border: 10px solid rgb(57, 69, 140);
+    color: rgb(255, 255, 255);
+    margin: 5rem auto;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.generate-pin-button:hover {
+    opacity: 0.8;
+}
+
+.button-section {
+    display: flex;
+    justify-content: center;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(3, 90px);
+    gap: 0.5rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.btn {
+    cursor: pointer;
+    background: rgb(66, 80, 98);
+    color: rgb(255, 255, 255);
+    width: 90px;
+    padding: 1rem 0.5rem;
+    border: 0;
+    display: inline-block;
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.btn:is(:hover, :focus) {
+    color: rgb(66, 80, 98);
+    background: rgb(255, 255, 255);
+}
+
+.submit-btn {
+    cursor: pointer;
+    width: 60%;
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    padding: 0.75rem 1.5rem;
+    border: 0;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(73, 91, 195);
+}
+
+.submit-btn:is(:hover, :focus) {
+    color: rgb(73, 91, 195);
+    background-color: rgb(255, 255, 255);
+}
+
+.deadline {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: rgb(220, 20, 60);
+    letter-spacing: 0.1rem;
+}
+
+.message-container {
+    width: 30%;
+    text-align: center;
+    margin: 1rem auto;
+    background-color: rgb(255, 255, 255);
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.3rem;
+    display: none;
+}
+
+#message {
+    font-size: 1rem;
+    color: rgb(25, 25, 112);
+}
+
+.close-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    margin-left: 0.5rem;
+}
+
+.close-btn i {
+    font-size: 1.3rem;
+    color: rgb(220, 20, 60)
+}
+
+@media (max-width: 750px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        padding: 0.7rem;
+        width: 75%;
+    }
+
+    .button-container {
+        grid-template-columns: repeat(3, 70px);
+    }
+
+    .btn {
+        width: 70px;
+    }
+
+    .message-container {
+        width: 75%;
+    }
+}
