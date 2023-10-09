@@ -26,9 +26,9 @@ function submitPin() {
     const message = document.getElementById('message');
 
     if (enteredPin === generatedPin) {
-        message.textContent = '✅ Pin matched!';
+        message.textContent = '✅ Pin Matched!';
     } else {
-        message.textContent = '❌ Pin not matched!';
+        message.textContent = '❌ Pin Not Matched!';
     }
 
     messageContainer.style.display = 'block';
@@ -41,7 +41,7 @@ function submitPin() {
         count--;
         countElement.innerText = " " + count + " ";
     } else {
-        countElement.innerText = "❎ No try left";
+        countElement.innerText = "❎ No";
         document.querySelector('.submit-btn').disabled = true;
     }
 }
