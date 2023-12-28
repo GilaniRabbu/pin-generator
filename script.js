@@ -29,21 +29,21 @@ function submitPin() {
         message.textContent = '✅ Pin Matched!';
     } else {
         message.textContent = '❌ Pin Not Matched!';
+
+        // Decrement Try Count
+        let countElement = document.getElementById("count-num");
+        let count = parseInt(countElement.innerText);
+
+        if (count > 1) {
+            count--;
+            countElement.innerText = " " + count + " ";
+        } else {
+            countElement.innerText = "❎ No";
+            document.querySelector('.submit-btn').disabled = true;
+        }
     }
 
     messageContainer.style.display = 'block';
-
-    // Try Count
-    var countElement = document.getElementById("count-num");
-    var count = parseInt(countElement.innerText);
-
-    if (count > 1) {
-        count--;
-        countElement.innerText = " " + count + " ";
-    } else {
-        countElement.innerText = "❎ No";
-        document.querySelector('.submit-btn').disabled = true;
-    }
 }
 
 function closeMessage() {
